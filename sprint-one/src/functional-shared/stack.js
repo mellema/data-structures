@@ -5,7 +5,7 @@ var makeStack = function() {
   someInstance._storage = {};
   someInstance._size = 0;
   extend(someInstance, stackMethods);
-  
+
   return someInstance;
 };
 
@@ -31,7 +31,7 @@ stackMethods.pop = function(){
   return result;
 };
 
-stackMethods.size = function(){  
+stackMethods.size = function(){
   return this._size;
 };
 
