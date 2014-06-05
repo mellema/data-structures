@@ -2,9 +2,10 @@ var makeStack = function() {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
   var someInstance = {};
-  someInstance.storage = {};
-  someInstance.stackSize = 0;
+  someInstance._storage = {};
+  someInstance._size = 0;
   extend(someInstance, stackMethods);
+  
   return someInstance;
 };
 
@@ -17,21 +18,21 @@ var extend =function(to, from){
 var stackMethods = {};
 
 stackMethods.push = function(value){
-  this.storage[this.stackSize] = value;
-  this.stackSize ++;
+  this._storage[this._size] = value;
+  this._size ++;
 };
 
 stackMethods.pop = function(){
-  if(this.stackSize > 0){
-    this.stackSize --;
+  if(this._size > 0){
+    this._size --;
   }
-  var result = this.storage[this.stackSize];
-  delete this.storage[this.stackSize];
+  var result = this._storage[this._size];
+  delete this._storage[this._size];
   return result;
 };
 
 stackMethods.size = function(){  
-  return this.stackSize;
+  return this._size;
 };
 
 
