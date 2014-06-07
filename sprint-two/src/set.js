@@ -10,7 +10,7 @@ setPrototype.add = function(item){
   if(!this._storage){
     this._storage = {};
   }
-  if(!this._storage.item){
+  if(!this._storage[item]){
   	this._storage[item] = item;
   }
 };
